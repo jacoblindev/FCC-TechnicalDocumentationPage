@@ -9,10 +9,15 @@ body {
     width: 1000px;
     margin: 2em auto;
     font-family: Helvetica, sans-serif;
+    color: #CCC;
+}
+
+code {
+    background-color: #555;
+    padding: .15em;
 }
 
 footer {
-    color: white;
     text-align: center;
     margin: 1em auto;
 }

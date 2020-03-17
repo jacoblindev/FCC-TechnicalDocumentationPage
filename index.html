@@ -9,36 +9,146 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <nav id="navbar">
-        <header></header>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
-        <a href="" class="nav-link"></a>
+        <header>JS Algorithms & Data Structures Projects</header>
+        <ul>
+            <li><a href="#introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#palindrome_checker" class="nav-link">Palindrome Checker</a></li>
+            <li><a href="#roman_numeral_converter" class="nav-link">Roman Numeral Converter</a></li>
+            <li><a href="#caesars_cipher" class="nav-link">Caesars Cipher</a></li>
+            <li><a href="#telephone_number_validator" class="nav-link">Telephone Number Validator</a></li>
+            <li><a href="#cash_register" class="nav-link">Cash Register</a></li>
+        </ul> 
     </nav>
+    <br>
+    <hr>
+    <br>
     <main id="main-doc">
-        <section class="main-section" id="title">
-            <header></header>
+        <section class="main-section" id="introduction">
+            <header><h2>Introduction</h2></header>
+            <p><strong>Time to put my new JavaScript skills to work!</strong></p>
+            <p>This is a documentation of my initial solutions! These challenges are from <a target="_blank" href="https://www.freecodecamp.org/">freeCodeCamp</a>'s "JavaScript Algorithms and Data Structures Certification". </p>
+            <p>Here are the small JavaScript programs I created:</p>
+            <ul>
+                <li>Palindrome Checker</li>
+                <li>Roman Numeral Converter</li>
+                <li>Caesars Cipher</li>
+                <li>Telephone Number Validator</li>
+                <li>Cash Register</li>
+            </ul>
+        </section>
+        <section class="main-section" id="palindrome_checker">
+            <header><h2>Palindrome Checker</h2></header>
+            <p>Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.</p>
+            <p>A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.</p>
+            <p><strong>Note</strong></p>
+            <p>You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.</p>
+            <p>We'll pass strings with varying formats, such as <code>"racecar"</code>, <code>"RaceCar"</code>, and <code>"race CAR"</code> among others.</p>
+            <p>We'll also pass strings with special symbols, such as <code>"2A3*3a2"</code>, <code>"2A3 3a2"</code>, and <code>"2_A3*3#A2"</code>.</p>
             <pre><code class="language-javascript">
-             
             </code></pre>
         </section>
-        <section class="main-section" id="title">
-            <header></header>
+        <section class="main-section" id="roman_numeral_converter">
+            <header><h2>Roman Numeral Converter</h2></header>
+            <p>Convert the given number into a roman numeral.</p>
+            <p>All <a href="https://www.mathsisfun.com/roman-numerals.html">roman numerals</a> answers should be provided in upper-case.</p>
+            <pre><code class="language-javascript">
+            </code></pre>
         </section>
-        <section class="main-section" id="title">
-            <header></header>
+        <section class="main-section" id="caesars_cipher">
+            <header><h2>Caesars Cipher</h2></header>
+            <p>One of the simplest and most widely known <em>ciphers</em> is a <em>Caesar cipher</em>, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.</p>
+            <p>A common modern use is the <a href="https://en.wikipedia.org/wiki/ROT13">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.</p>
+            <p>Write a function which takes a <a href="https://en.wikipedia.org/wiki/ROT13">ROT13</a> encoded string as input and returns a decoded string.</p>
+            <p>All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.</p>
+            <pre><code class="language-javascript">
+            </code></pre>
         </section>
-        <section class="main-section" id="title">
-            <header></header>
+        <section class="main-section" id="telephone_number_validator">
+            <header><h2>Telephone Number Validator</h2></header>
+            <p>Return <code>true</code> if the passed string looks like a valid US phone number.</p>
+            <p>The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):</p>
+            <code>
+                555-555-5555<br>
+                (555)555-5555<br>
+                (555) 555-5555<br>
+                555 555 5555<br>
+                5555555555<br>
+                1 555 555 5555<br>
+            </code>
+            <p>For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.</p>
+            <pre><code class="language-javascript">
+            </code></pre>
         </section>
-        <section class="main-section" id="title">
-            <header></header>
-        </section>
-        <section class="main-section" id="title">
-            <header></header>
+        <section class="main-section" id="cash_register">
+            <header><h2>Cash Register</h2></header>
+            <p>Design a cash register drawer function <code>checkCashRegister()</code> that accepts purchase price as the first argument <code>(price)</code>, payment as the second argument <code>(cash)</code>, and cash-in-drawer <code>(cid)</code> as the third argument.</p>
+            <p><code>cid</code> is a 2D array listing available currency.</p>
+            <p>The <code>checkCashRegister()</code> function should always return an object with a <code>status</code> key and a <code>change</code> key.</p>
+            <p>Return <code>{status: "INSUFFICIENT_FUNDS", change: []}</code> if cash-in-drawer is less than the change due, or if you cannot return the exact change.</p>
+            <p>Return <code>{status: "CLOSED", change: [...]}</code> with cash-in-drawer as the value for the key <code>change</code> if it is equal to the change due.</p>
+            <p>Otherwise, return <code>{status: "OPEN", change: [...]}</code>, with the change due in coins and bills, sorted in highest to lowest order, as the value of the <code>change</code> key.</p>
+            <hr>
+            <table>
+                <thead>
+                    <th>Currency Unit</th>
+                    <th>Amount</th>
+                </thead>
+                <tbody>
+                    <td>Penny</td>
+                    <td>$0.01 (PENNY)</td>
+                </tbody>
+                <tbody>
+                    <td>Nickel</td>
+                    <td>$0.05 (NICKEL)</td>
+                </tbody>
+                <tbody>
+                    <td>Dime</td>
+                    <td>$0.1 (DIME)</td>
+                </tbody>
+                <tbody>
+                    <td>Quarter</td>
+                    <td>$0.25 (QUARTER)</td>
+                </tbody>
+                <tbody>
+                    <td>Dollar</td>
+                    <td>$1 (DOLLAR)</td>
+                </tbody>
+                <tbody>
+                    <td>Five Dollars</td>
+                    <td>$5 (FIVE)</td>
+                </tbody>
+                <tbody>
+                    <td>Ten Dollars</td>
+                    <td>$10 (TEN)</td>
+                </tbody>
+                <tbody>
+                    <td>Twenty Dollars</td>
+                    <td>$20 (TWENTY)</td>
+                </tbody>
+                <tbody>
+                    <td>One-hundred Dollars</td>
+                    <td>$100 (ONE HUNDRED)</td>
+                </tbody>
+            </table>
+            <hr>
+            <p>See below for an example of a cash-in-drawer array:</p>
+            <pre><code class="language-javascript">
+[
+    ["PENNY", 1.01],
+    ["NICKEL", 2.05],
+    ["DIME", 3.1],
+    ["QUARTER", 4.25],
+    ["ONE", 90],
+    ["FIVE", 55],
+    ["TEN", 20],
+    ["TWENTY", 60],
+    ["ONE HUNDRED", 100]
+]
+            </code></pre>
+            <pre><code class="language-javascript">
+            </code></pre>
         </section>
     </main>
     <footer>Create & Design by Jacob Lin 👊🏼2020</footer>
