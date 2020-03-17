@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <!-- freeCodeCamp's CDN link to run the tests -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <nav id="navbar">
-        <header>JS Algorithms & Data Structures Projects</header>
+        <header><h1>JS Algorithms & Data Structures Projects</h1></header>
         <ul>
             <li><a href="#introduction" class="nav-link">Introduction</a></li>
             <li><a href="#palindrome_checker" class="nav-link">Palindrome Checker</a></li>
@@ -21,9 +22,7 @@
             <li><a href="#cash_register" class="nav-link">Cash Register</a></li>
         </ul> 
     </nav>
-    <br>
-    <hr>
-    <br>
+
     <main id="main-doc">
         <section class="main-section" id="introduction">
             <header><h2>Introduction</h2></header>
@@ -89,7 +88,7 @@
             <p>Return <code>{status: "INSUFFICIENT_FUNDS", change: []}</code> if cash-in-drawer is less than the change due, or if you cannot return the exact change.</p>
             <p>Return <code>{status: "CLOSED", change: [...]}</code> with cash-in-drawer as the value for the key <code>change</code> if it is equal to the change due.</p>
             <p>Otherwise, return <code>{status: "OPEN", change: [...]}</code>, with the change due in coins and bills, sorted in highest to lowest order, as the value of the <code>change</code> key.</p>
-            <hr>
+
             <table>
                 <thead>
                     <th>Currency Unit</th>
@@ -132,7 +131,7 @@
                     <td>$100 (ONE HUNDRED)</td>
                 </tbody>
             </table>
-            <hr>
+
             <p>See below for an example of a cash-in-drawer array:</p>
             <pre><code class="language-javascript">
 [
