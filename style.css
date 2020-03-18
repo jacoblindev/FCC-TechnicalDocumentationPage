@@ -111,8 +111,14 @@ td:first-child {
 /* Footer Area */
 footer {
     grid-area: footer;
-    text-align: center;
-    margin: .8em auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .8em auto 1.2em;
+}
+
+footer p {
+    padding: 0 3em;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -152,5 +158,10 @@ footer {
     /* Main Documentation Area */
     #main-doc {
         margin: 0 0;
+    }
+
+    /* Footer Area */
+    footer {
+        flex-direction: column;
     }
 }
