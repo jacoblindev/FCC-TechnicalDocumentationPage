@@ -27,7 +27,7 @@
         <section class="main-section" id="introduction">
             <header><h2>Introduction</h2></header>
             <p><strong>Time to put my new JavaScript skills to work!</strong></p>
-            <p>This is a documentation of my initial solutions! These challenges are from <a target="_blank" href="https://www.freecodecamp.org/">freeCodeCamp</a>'s "JavaScript Algorithms and Data Structures Certification". </p>
+            <p>This is a documentation of my initial solutions for <a target="_blank" href="https://www.freecodecamp.org/">freeCodeCamp</a>'s "JavaScript Algorithms and Data Structures Certification" projects.</p>
             <p>Here are the small JavaScript programs I created:</p>
             <ul>
                 <li>Palindrome Checker</li>
@@ -39,49 +39,161 @@
         </section>
         <section class="main-section" id="palindrome_checker">
             <header><h2>Palindrome Checker</h2></header>
+            <h3>Here is the question:</h3>
             <p>Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.</p>
             <p>A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.</p>
             <p><strong>Note</strong></p>
             <p>You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.</p>
             <p>We'll pass strings with varying formats, such as <code>"racecar"</code>, <code>"RaceCar"</code>, and <code>"race CAR"</code> among others.</p>
             <p>We'll also pass strings with special symbols, such as <code>"2A3*3a2"</code>, <code>"2A3 3a2"</code>, and <code>"2_A3*3#A2"</code>.</p>
+            <h3>Here is my solutions:</h3>
             <pre><code class="language-javascript">
+function palindrome(str) {
+    // Turn str into arr of char
+    let charArr = str.toLowerCase().split('').filter(e => e.match(/[^\W_]+/g));
+    // Reverse it (make a new copy)
+    let reverseArr = charArr.slice(0).reverse();
+    console.log(reverseArr);
+    console.log(charArr);
+    // Compare both arr's same index
+    let palindromeCheck = true;
+    for (let i = 0; i < charArr.length; i++) {
+        if (reverseArr[i] !== charArr[i]) {
+        palindromeCheck = false;
+        }
+    }
+    return palindromeCheck;
+}
+
+palindrome("eye"); // true
+palindrome("not a palindrome"); // false
             </code></pre>
         </section>
         <section class="main-section" id="roman_numeral_converter">
             <header><h2>Roman Numeral Converter</h2></header>
+            <h3>Here is the question:</h3>
             <p>Convert the given number into a roman numeral.</p>
             <p>All <a href="https://www.mathsisfun.com/roman-numerals.html">roman numerals</a> answers should be provided in upper-case.</p>
-            <pre><code class="language-javascript">
+            <h3>Here is my solution:</h3>
+            <pre><code class="language-javascript">/*
+** Turn the num into digits, tens, hundreds, thousands
+** Figure out the num is in which range
+** 1 - I, 5 - V, 10 - X, 50 - L, 100 - C, 500 - D, 1000 - M
+*/
+function convertToRoman(num) {
+    let numDigits = num.toString().split('').reverse();
+    // console.log(numDigits);
+    let romanStr = "";
+    let digits = numDigits[0] == 1 ? romanStr.concat("I")
+                    : numDigits[0] == 2 ? romanStr.concat("II")
+                    : numDigits[0] == 3 ? romanStr.concat("III")
+                    : numDigits[0] == 4 ? romanStr.concat("IV")
+                    : numDigits[0] == 5 ? romanStr.concat("V")
+                    : numDigits[0] == 6 ? romanStr.concat("VI")
+                    : numDigits[0] == 7 ? romanStr.concat("VII")
+                    : numDigits[0] == 8 ? romanStr.concat("VIII")
+                    : numDigits[0] == 9 ? romanStr.concat("IX")
+                    : romanStr;
+    // console.log(digits);
+    let tensDigits = numDigits[1] == 1 ? romanStr.concat("X")
+                    : numDigits[1] == 2 ? romanStr.concat("XX")
+                    : numDigits[1] == 3 ? romanStr.concat("XXX")
+                    : numDigits[1] == 4 ? romanStr.concat("XL")
+                    : numDigits[1] == 5 ? romanStr.concat("L")
+                    : numDigits[1] == 6 ? romanStr.concat("LX")
+                    : numDigits[1] == 7 ? romanStr.concat("LXX")
+                    : numDigits[1] == 8 ? romanStr.concat("LXXX")
+                    : numDigits[1] == 9 ? romanStr.concat("XC")
+                    : romanStr;
+    // console.log(tensDigits);
+    let hundredsDigits = numDigits[2] == 1 ? romanStr.concat("C")
+                    : numDigits[2] == 2 ? romanStr.concat("CC")
+                    : numDigits[2] == 3 ? romanStr.concat("CCC")
+                    : numDigits[2] == 4 ? romanStr.concat("CD")
+                    : numDigits[2] == 5 ? romanStr.concat("D")
+                    : numDigits[2] == 6 ? romanStr.concat("DC")
+                    : numDigits[2] == 7 ? romanStr.concat("DCC")
+                    : numDigits[2] == 8 ? romanStr.concat("DCCC")
+                    : numDigits[2] == 9 ? romanStr.concat("CM")
+                    : romanStr;
+    // console.log(hundredsDigits);
+    let thousandsDigits = numDigits[3] == 1 ? romanStr.concat("M")
+                    : numDigits[3] == 2 ? romanStr.concat("MM")
+                    : numDigits[3] == 3 ? romanStr.concat("MMM")
+                    : romanStr;
+    // console.log(thousandsDigits);
+    // Join back all the digits into one romanStr
+    romanStr = romanStr
+                .concat(thousandsDigits)
+                .concat(hundredsDigits)
+                .concat(tensDigits)
+                .concat(digits);
+    // console.log(romanStr);
+    return romanStr;
+}
+
+convertToRoman(36);     // return: XXXVI
+convertToRoman(649);    // return: DCXLIX
+convertToRoman(3999);   // return: MMMCMXCIX
             </code></pre>
         </section>
         <section class="main-section" id="caesars_cipher">
             <header><h2>Caesars Cipher</h2></header>
+            <h3>Here is the question:</h3>
             <p>One of the simplest and most widely known <em>ciphers</em> is a <em>Caesar cipher</em>, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.</p>
             <p>A common modern use is the <a href="https://en.wikipedia.org/wiki/ROT13">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.</p>
             <p>Write a function which takes a <a href="https://en.wikipedia.org/wiki/ROT13">ROT13</a> encoded string as input and returns a decoded string.</p>
             <p>All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.</p>
-            <pre><code class="language-javascript">
+            <h3>Here is my solutions:</h3>
+            <pre><code class="language-javascript">/*
+** Turn the str into arr of char
+** loop through the arr
+** check each charCodeAt(0) and shift it back 13  
+** A-Z => 65-90 (watch out for looping back)
+** and return the fromCharCode()
+*/
+function rot13(str) { 
+    let decodedStr = str.split('').map(e => e.match(/[A-Z]+/)
+                        ? e.charCodeAt(0) < 78
+                        ? String.fromCharCode(e.charCodeAt(0) + 13) 
+                        : String.fromCharCode(e.charCodeAt(0) - 13) 
+                        : e ).join('');
+    // console.log(decodedStr);
+    return decodedStr;
+}
+
+rot13("SERR PBQR PNZC"); // return: FREE CODE CAMP
+rot13("LBH QVQ VG!");    // return: YOU DID IT!
             </code></pre>
         </section>
         <section class="main-section" id="telephone_number_validator">
             <header><h2>Telephone Number Validator</h2></header>
+            <h3>Here is the question:</h3>
             <p>Return <code>true</code> if the passed string looks like a valid US phone number.</p>
             <p>The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):</p>
-            <code>
-                555-555-5555<br>
-                (555)555-5555<br>
-                (555) 555-5555<br>
-                555 555 5555<br>
-                5555555555<br>
-                1 555 555 5555<br>
-            </code>
+            <ul>
+                <li>555-555-5555</li>
+                <li>(555)555-5555</li>
+                <li>(555) 555-5555</li>
+                <li>555 555 5555</li>
+                <li>5555555555</li>
+                <li>1 555 555 5555</li>
+            </ul>
             <p>For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.</p>
+            <h3>Here is my solutions:</h3>
             <pre><code class="language-javascript">
+function telephoneCheck(str) {
+    let regex = /^(1?|[1][\s]?)([\d]{3}|[(][\d]{3}[)])[\s|\-]?[\d]{3}[\s-]?[\d]{4}$/;
+    // console.log(regex.test(str));
+    return regex.test(str);
+}
+
+telephoneCheck("555-555-5555"); // return: true
             </code></pre>
         </section>
         <section class="main-section" id="cash_register">
             <header><h2>Cash Register</h2></header>
+            <h3>Here is the question:</h3>
             <p>Design a cash register drawer function <code>checkCashRegister()</code> that accepts purchase price as the first argument <code>(price)</code>, payment as the second argument <code>(cash)</code>, and cash-in-drawer <code>(cid)</code> as the third argument.</p>
             <p><code>cid</code> is a 2D array listing available currency.</p>
             <p>The <code>checkCashRegister()</code> function should always return an object with a <code>status</code> key and a <code>change</code> key.</p>
@@ -133,8 +245,7 @@
             </table>
 
             <p>See below for an example of a cash-in-drawer array:</p>
-            <pre><code class="language-javascript">
-[
+            <pre><code class="language-javascript">[
     ["PENNY", 1.01],
     ["NICKEL", 2.05],
     ["DIME", 3.1],
@@ -144,9 +255,87 @@
     ["TEN", 20],
     ["TWENTY", 60],
     ["ONE HUNDRED", 100]
-]
-            </code></pre>
-            <pre><code class="language-javascript">
+]</code></pre>
+            <h3>Here is my solutions:</h3>
+            <pre><code class="language-javascript">/*
+** First calculate the change = cash - price
+** Loop through the C-I-D and - the change
+** to see if it's
+** - "INSUFFICIENT_FUNDS" - Not enough!
+** - "CLOSED" - equal to the change, no more!
+** - "OPEN" - still got some left!
+** then set the "status" & "change" keys
+** return the obj
+** ============================================
+** Need to sorted out the decimal not calculate correctly isses?
+** Make num into integer by * 100
+*/
+function checkCashRegister(price, cash, cid) {
+    var change = Math.round(cash * 100 - price * 100);
+    // console.log(change);
+    let unitArr = [["ONE HUNDRED", 100],
+                    ["TWENTY", 20],
+                    ["TEN", 10],
+                    ["FIVE", 5],
+                    ["ONE", 1],
+                    ["QUARTER", 0.25],
+                    ["DIME", 0.1],
+                    ["NICKEL", 0.05],
+                    ["PENNY", 0.01]];
+    // Use .map() to create new arr, so when we calculate * 100
+    // the orignal arr's value won't be effect...!
+    // if only use .slice() to copy, 
+    // somehow the value will be effected when we do Math with it...?
+    let checkCid = cid.map(e => e.slice(0)).reverse();
+    let checkUnit = unitArr.map(e => e.slice(0));
+    let obj = {
+        status: "INSUFFICIENT_FUNDS",
+        change: [["ONE HUNDRED", 0],
+                ["TWENTY", 0],
+                ["TEN", 0],
+                ["FIVE", 0],
+                ["ONE", 0],
+                ["QUARTER", 0],
+                ["DIME", 0],
+                ["NICKEL", 0],
+                ["PENNY", 0]]
+    };
+    for (let i = 0; i < checkCid.length; i++) {
+        checkCid[i][1] = Math.ceil(checkCid[i][1] * 100);
+        checkUnit[i][1] = Math.ceil(checkUnit[i][1] * 100);
+        // console.log(cid);
+        while (checkUnit[i][1] <= change && checkCid[i][1] >= checkUnit[i][1]) {
+        change -= checkUnit[i][1];
+        checkCid[i][1] -= checkUnit[i][1];
+        obj.change[i][1] += unitArr[i][1];
+        }
+    }
+    // console.log(change);
+    // console.log(checkCid);
+    // console.log(cid);
+    if (change !== 0) {
+        obj.change = [];
+    } else if (checkCid.every(e => e[1] === 0)) {
+        obj.status = "CLOSED";
+        obj.change = cid;
+    } else {
+        obj.status = "OPEN";
+        obj.change = obj.change.filter(e => e[1] !== 0);
+    }
+    // console.log(obj);
+    return obj;
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 1.01], 
+                            ["NICKEL", 2.05], 
+                            ["DIME", 3.1], 
+                            ["QUARTER", 4.25], 
+                            ["ONE", 90], 
+                            ["FIVE", 55], 
+                            ["TEN", 20], 
+                            ["TWENTY", 60], 
+                            ["ONE HUNDRED", 100]]); 
+// return: {status: "OPEN", change: [["QUARTER", 0.5]]}
             </code></pre>
         </section>
     </main>

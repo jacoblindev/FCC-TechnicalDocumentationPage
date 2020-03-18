@@ -15,15 +15,28 @@ body {
     grid-gap: .5em;
 }
 
+code {
+    background-color: #555;
+    padding: .15em;
+}
+
 li {
     list-style: none;
+}
+
+a {
+    color: #AAA;
+}
+
+a:hover {
+    background-color: rgba(125, 125, 125, 0.3);
 }
 
 /* Nav Section - Desktop Version */
 #navbar {
     grid-area: nav;
     position: fixed;
-    width: 25vw;
+    width: 25%;
     left: 0;
     bottom: 0;
     z-index: 99999;
@@ -44,37 +57,65 @@ li {
 }
 
 #navbar li a {
+    text-decoration: none;
     display: block;
     width: 100%;
     height: 2.2em;
-    color: #CCC;
-    text-decoration: none;
     line-height: 2.2em;
     font-size: 1.2rem;
     padding-left: .8em;
 }
 
-#navbar li a:hover {
-    background-color: rgba(125, 125, 125, 0.3);
-}
-
 /* Main Documentation Area */
 #main-doc {
     grid-area: main;
+    margin: 0 1em;
 }
 
-code {
-    background-color: #555;
-    padding: .15em;
+#main-doc header {
+    margin: 1.8em 0;
+    color: #DDD;
 }
 
+#main-doc p {
+    margin: 1em 0;
+    padding-left: 1em;
+    line-height: 1.3em;
+}
+
+#main-doc ul li {
+    height: 1.8em;
+    line-height: 1.8em;
+    padding-left: 3em;
+    list-style-position: inside;
+    list-style-type: " ✔️ ";
+}
+
+/* Tables Style */
+table {
+    margin-left: 1em;
+}
+
+th,
+td {
+  padding: .8em;
+  text-align: left;
+  border-bottom: 1px solid #AAA; 
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 1em; 
+}
+
+/* Footer Area */
 footer {
     grid-area: footer;
     text-align: center;
     margin: .8em auto;
 }
 
-@media only screen and (max-width: 815px) {
+@media only screen and (max-width: 1000px) {
     body {
         display: flex;
         flex-direction: column;
@@ -106,5 +147,10 @@ footer {
         text-align: center;
         height: 2em;
         line-height: 2em;
+    }
+
+    /* Main Documentation Area */
+    #main-doc {
+        margin: 0 0;
     }
 }
