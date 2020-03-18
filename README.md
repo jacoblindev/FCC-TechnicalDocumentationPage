@@ -6,7 +6,7 @@ I use this opportunity to create a documentation page for my initial solutions o
 
 ![Demo-Desktop](https://github.com/jacoblindev/FCC-TechnicalDocumentationPage/blob/master/img/DesktopVersion-1.png)
 
-![Demo-Mobile](https://github.com/jacoblindev/FCC-TechnicalDocumentationPage/blob/master/img/MobileVersion.png=414x736)
+![Demo-Mobile](https://github.com/jacoblindev/FCC-TechnicalDocumentationPage/blob/master/img/MobileVersion.png=414)
 
 ## Tools
 
